@@ -1,0 +1,28 @@
+
+
+local Lib = {}
+
+local function checkIfGameLoaded()
+    game.Loaded:Wait()
+    print("Game Loaded!")
+end
+
+checkIfGameLoaded()
+
+function Lib:InstanceCore(Name, options)
+    local class = options.className
+    if not class or not pcall(Instance.new, class) then
+        warn("Invalid class name: " .. tostring(class))
+        return nil
+    end
+
+    local Object = Instance.new(class)
+    Object.Name = Name or class
+    Object.Parent = options.parent or game.Workspace
+
+
+
+    return Object
+end
+
+return Lib
