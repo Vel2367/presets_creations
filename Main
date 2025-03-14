@@ -1,11 +1,5 @@
 local Lib = {}
 
-local function checkIfGameLoaded()
-    game.Loaded:Wait()
-    print("Game Loaded!")
-end
-checkIfGameLoaded()
-
 function Lib:InstanceObject(option)
     local class = option.class
     local parent = option.parent
