@@ -40,10 +40,13 @@ function Lib:InstanceCore(Name, options)
     local ObjectProperties = Lib:GetProperties(class)
     if ObjectProperties then
         for property, value in pairs(options.properties or {}) do
-            if table.find(ObjectProperties, property) then
-                pcall(function()
+            if Object:FindFirstChild(property) then
+                local success, errorMessage = pcall(function()
                     Object[property] = value
                 end)
+                if not success then
+                    warn("Failed to set property " .. property .. ": " .. errorMessage)
+                end
             else
                 warn("Property " .. property .. " not found for class " .. class)
             end
