@@ -7,16 +7,17 @@ end
 checkIfGameLoaded()
 
 function Lib:InstanceObject(option)
-    local class, parent = option.class or nil, option.parent or nil
+    local class, parent, name = option.class or nil, option.parent or nil, option.name or option.class
 
     local success, Object = pcall(function()
         return Instance.new(class)
     end)
+    if not success then return nil end
+    Object.Parent = parent
+    Object.Name = name
 
-    if not success then
-        warn("Ошибка при создании объекта: " .. tostring(Object))
-    else Object.Parent = parent 
-    Object.Name = option.name end
+
+    return Object
 end
  
 return Lib
