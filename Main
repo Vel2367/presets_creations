@@ -2,6 +2,7 @@ local Lib = {}
 
 function Lib:InstanceObject(option)
     local class, parent, name = option.class or nil, option.parent or nil, option.name or option.class
+    local properties = option.properties or {}
 
     local success, Object = pcall(function()
         return Instance.new(class)
