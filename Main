@@ -1,13 +1,31 @@
-
-
+local Methods = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vel2367/presets_creations/refs/heads/main/Methods"))()
+local Properties = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vel2367/presets_creations/refs/heads/main/Properties"))()
 local Lib = {}
 
 local function checkIfGameLoaded()
     game.Loaded:Wait()
     print("Game Loaded!")
 end
-
 checkIfGameLoaded()
+
+
+function Lib:GetMethods(className)
+    if Methods[className] then
+        return Methods[className]
+    else
+        warn("Methods for class " .. className .. " not found.")
+        return nil
+    end
+end
+
+function Lib:GetProperties(className)
+    if Properties[className] then
+        return Methods[className]
+    else
+        warn("Properties for class " .. className .. " not found.")
+        return nil
+    end
+end
 
 function Lib:InstanceCore(Name, options)
     local class = options.className
@@ -20,8 +38,9 @@ function Lib:InstanceCore(Name, options)
     Object.Name = Name or class
     Object.Parent = options.parent or game.Workspace
 
-
-
+    local ObjectMethods = Lib:GetMethods(class)
+    local ObjectProperties = Lib:GetProperties(class)
+    
     return Object
 end
 
