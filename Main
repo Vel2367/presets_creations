@@ -2,9 +2,11 @@ local allProperties = loadstring(game:HttpGet("https://raw.githubusercontent.com
 local Lib = {}
 
 function Lib:GetProperties(className)
-    return allProperties[className] or {}
+    if allProperties[className] then return allProperties[className]
+    else warn("Properties for class '" .. className .. "' not found.") 
+        return nil
+    end
 end
-
 
 function Lib:InstanceObject(option)
     local class, parent, name = option.class or nil, option.parent or nil, option.name or option.class
