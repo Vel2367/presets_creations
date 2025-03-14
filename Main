@@ -1,11 +1,5 @@
 local Objects = {}
 
-local function checkIfGameLoaded()
-    game.Loaded:Wait()
-    print("Game Loaded!")
-end
-checkIfGameLoaded()
-
 function Lib:InstanceCore(Name, options)
     local class = options.className
     if not class or not pcall(Instance.new, class) then
