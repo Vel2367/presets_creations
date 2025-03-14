@@ -6,16 +6,17 @@ local function checkIfGameLoaded()
 end
 checkIfGameLoaded()
 
-function Lib:InstanceCore(Name, options)
-    local class = options.className
-    if not class or not pcall(Instance.new, class) then
-        warn("Invalid class name: " .. tostring(class))
-        return nil
-    end
+function Lib:InstanceObject(option)
+    local class, parent = option.class or nil, option.parent or nil
 
-    local Object = Instance.new(class)
-    Object.Name = Name or class
-    Object.Parent = options.parent or game.Workspace
+    local success, Object = pcall(function()
+        return Instance.new(class)
+    end)
+
+    if not success then
+        warn("Ошибка при создании объекта: " .. tostring(Object))
+    else Object.Parent = parent 
+    Object.Name = option.name end
 end
-
+ 
 return Lib
