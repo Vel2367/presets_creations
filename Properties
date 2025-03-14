@@ -1,0 +1,196 @@
+local ObjectProperties = {
+    -- BasePart
+    BasePart = {
+        "Anchored", "CFrame", "Color", "CanCollide", "CollisionGroup", "CustomPhysicalProperties",
+        "Density", "Elasticity", "Friction", "Material", "Position", "Rotation", "Size", "Transparency",
+        "Velocity", "Shape", "SurfaceType"
+    },
+    
+    -- Model
+    Model = {
+        "PrimaryPart", "CFrame", "Position", "Orientation", "Name", "Parent", "IsAnchored"
+    },
+    
+    -- Part
+    Part = {
+        "Size", "Color", "Material", "Shape", "Transparency", "Anchored", "CanCollide", "Reflectance",
+        "CFrame", "Position"
+    },
+    
+    -- GuiObject
+    GuiObject = {
+        "Position", "Size", "AnchorPoint", "Visible", "BackgroundColor3", "BackgroundTransparency",
+        "BorderColor3", "BorderSizePixel", "Text", "TextColor3", "TextSize", "TextStrokeTransparency",
+        "TextStrokeColor3", "TextTransparency", "TextAlign", "Font", "ZIndex"
+    },
+    
+    -- Light
+    Light = {
+        "Brightness", "Color", "Range", "Shadows", "Enabled"
+    },
+    
+    -- Sound
+    Sound = {
+        "Volume", "Pitch", "Looped", "Playing", "TimePosition", "SoundId"
+    },
+    
+    -- TextLabel/TextButton
+    TextLabel_TextButton = {
+        "TextColor3", "TextSize", "TextTransparency", "TextStrokeTransparency", "TextStrokeColor3", 
+        "Font", "TextAlignment", "TextWrapped"
+    },
+    
+    -- Script
+    Script = {
+        "Disabled", "Parent", "Source", "Name"
+    },
+    
+    -- Camera
+    Camera = {
+        "CFrame", "FieldOfView", "Focus", "CameraType", "LensMode"
+    },
+    
+    -- Terrain
+    Terrain = {
+        "Material", "Water", "RenderQuality"
+    },
+    
+    -- SoundService
+    SoundService = {
+        "Volume", "Playing", "SoundGroup", "TimePosition"
+    },
+    
+    -- Lighting
+    Lighting = {
+        "Ambient", "OutdoorAmbient", "Brightness", "FogColor", "FogStart", "FogEnd", "TimeOfDay", 
+        "GlobalShadows", "ColorShift_Bottom", "ColorShift_Top"
+    },
+    
+    -- Player
+    Player = {
+        "Health", "MaxHealth", "Team", "Character", "Backpack", "UserId", "Name", "DisplayName"
+    },
+    
+    -- Humanoid
+    Humanoid = {
+        "Health", "MaxHealth", "WalkSpeed", "JumpHeight", "HipWidth", "Name", "RootPart"
+    },
+    
+    -- GuiButton
+    GuiButton = {
+        "Text", "TextColor", "TextSize", "OnClick", "Enabled", "Position", "Size", "Font", "AnchorPoint"
+    },
+    
+    -- Animation
+    Animation = {
+        "Priority", "TrackSpeed", "TrackWeight", "IsLooping"
+    },
+    
+    -- Network
+    Network = {
+        "NetworkOwner", "ReplicationFocus"
+    },
+    
+    -- UIStroke
+    UIStroke = {
+        "Color", "Thickness", "Transparency"
+    },
+    
+    -- TweenInfo
+    TweenInfo = {
+        "Time", "EasingStyle", "EasingDirection", "RepeatCount", "Reverses"
+    },
+    
+    -- BoxHandleAdornment
+    BoxHandleAdornment = {
+        "Adornee", "AlwaysOnTop", "Color3", "Size", "Transparency", "Visible", "ZIndex"
+    },
+    
+    -- BillboardGui
+    BillboardGui = {
+        "Size", "Adornee", "StudsOffset", "AlwaysOnTop", "Enabled", "MaxDistance", "ResetOnSpawn"
+    },
+    
+    -- SurfaceGui
+    SurfaceGui = {
+        "Size", "Adornee", "Face", "Enabled", "StudsOffset"
+    },
+    
+    -- CameraSubject
+    CameraSubject = {
+        "Parent", "CFrame", "Position", "Orientation"
+    },
+    
+    -- HumanoidDescription
+    HumanoidDescription = {
+        "BodyColors", "Head", "Torso", "Legs", "Arms", "Clothing", "Hat"
+    },
+    
+    -- BillboardGui
+    BillboardGui = {
+        "Size", "Adornee", "StudsOffset", "AlwaysOnTop", "Enabled", "MaxDistance", "ResetOnSpawn"
+    },
+    
+    -- Decal
+    Decal = {
+        "Texture", "Transparency", "Face", "Color3", "Size", "ZIndex"
+    },
+    
+    -- MeshPart
+    MeshPart = {
+        "MeshId", "TextureID", "Scale", "Color", "Material", "Reflectance", "Size", "Transparency"
+    },
+    
+    -- Decal
+    Decal = {
+        "Texture", "Transparency", "Face", "Color3", "Size", "ZIndex"
+    },
+    
+    -- RemoteEvent
+    RemoteEvent = {
+        "Name", "OnClientEvent", "OnServerEvent"
+    },
+    
+    -- RemoteFunction
+    RemoteFunction = {
+        "Name", "OnServerInvoke"
+    },
+    
+    -- PathfindingService
+    PathfindingService = {
+        "CreatePath", "IsPathClear", "GetPathStatus"
+    },
+    
+    -- TextBox
+    TextBox = {
+        "Text", "TextColor3", "TextSize", "TextTransparency", "TextStrokeTransparency", "TextStrokeColor3",
+        "Font", "TextAlignment", "TextWrapped", "MultiLine"
+    },
+    
+    -- Particles (ParticleEmitter)
+    ParticleEmitter = {
+        "Size", "Rate", "Texture", "Color", "Transparency", "Lifetime", "Speed", "Rotation", "VelocityInheritance"
+    },
+    
+    -- ScreenGui
+    ScreenGui = {
+        "Enabled", "ResetOnSpawn", "Parent"
+    },
+    
+    -- Frame
+    Frame = {
+        "Size", "Position", "AnchorPoint", "BackgroundColor3", "BackgroundTransparency", "BorderSizePixel", "Visible"
+    },
+    
+    -- TextButton
+    TextButton = {
+        "Text", "TextColor3", "TextSize", "Font", "TextAlignment", "OnClick"
+    },
+    
+    -- TextLabel
+    TextLabel = {
+        "Text", "TextColor3", "TextSize", "Font", "TextAlignment", "TextWrapped"
+    }
+}
+
+return ObjectProperties
