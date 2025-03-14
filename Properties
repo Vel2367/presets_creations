@@ -3,193 +3,195 @@ local ObjectProperties = {
     BasePart = {
         "Anchored", "CFrame", "Color", "CanCollide", "CollisionGroup", "CustomPhysicalProperties",
         "Density", "Elasticity", "Friction", "Material", "Position", "Rotation", "Size", "Transparency",
-        "Velocity", "Shape", "SurfaceType"
+        "Velocity", "Shape", "SurfaceType", "Reflectance"
     },
-    
+
     -- Model
     Model = {
-        "PrimaryPart", "CFrame", "Position", "Orientation", "Name", "Parent", "IsAnchored"
+        "PrimaryPart", "CFrame", "Position", "Orientation", "Name", "Parent", "WorldPivot"
     },
-    
+
     -- Part
     Part = {
         "Size", "Color", "Material", "Shape", "Transparency", "Anchored", "CanCollide", "Reflectance",
-        "CFrame", "Position"
+        "CFrame", "Position", "BrickColor"
     },
-    
+
     -- GuiObject
     GuiObject = {
         "Position", "Size", "AnchorPoint", "Visible", "BackgroundColor3", "BackgroundTransparency",
-        "BorderColor3", "BorderSizePixel", "Text", "TextColor3", "TextSize", "TextStrokeTransparency",
-        "TextStrokeColor3", "TextTransparency", "TextAlign", "Font", "ZIndex"
+        "BorderColor3", "BorderSizePixel", "ZIndex", "Rotation", "ClipsDescendants"
     },
-    
+
     -- Light
     Light = {
         "Brightness", "Color", "Range", "Shadows", "Enabled"
     },
-    
+
     -- Sound
     Sound = {
-        "Volume", "Pitch", "Looped", "Playing", "TimePosition", "SoundId"
+        "Volume", "Pitch", "Looped", "Playing", "TimePosition", "SoundId", "PlaybackSpeed", "RollOffMode"
     },
-    
+
     -- TextLabel/TextButton
     TextLabel_TextButton = {
-        "TextColor3", "TextSize", "TextTransparency", "TextStrokeTransparency", "TextStrokeColor3", 
-        "Font", "TextAlignment", "TextWrapped"
+        "Text", "TextColor3", "TextSize", "TextTransparency", "TextStrokeTransparency", "TextStrokeColor3",
+        "Font", "TextWrapped", "TextScaled", "RichText"
     },
-    
+
     -- Script
     Script = {
-        "Disabled", "Parent", "Source", "Name"
+        "Disabled", "Parent", "Name"
     },
-    
+
+    -- LocalScript
+    LocalScript = {
+        "Disabled", "Parent", "Name"
+    },
+
+    -- ModuleScript
+    ModuleScript = {
+        "Parent", "Name"
+    },
+
     -- Camera
     Camera = {
-        "CFrame", "FieldOfView", "Focus", "CameraType", "LensMode"
+        "CFrame", "FieldOfView", "Focus", "CameraType", "ViewportSize", "DepthMode"
     },
-    
+
     -- Terrain
     Terrain = {
-        "Material", "Water", "RenderQuality"
+        "Material", "WaterReflectance", "WaterTransparency", "WaterWaveSize", "WaterWaveSpeed"
     },
-    
+
     -- SoundService
     SoundService = {
-        "Volume", "Playing", "SoundGroup", "TimePosition"
+        "Volume", "RespectFilteringEnabled", "AmbientReverb"
     },
-    
+
     -- Lighting
     Lighting = {
-        "Ambient", "OutdoorAmbient", "Brightness", "FogColor", "FogStart", "FogEnd", "TimeOfDay", 
-        "GlobalShadows", "ColorShift_Bottom", "ColorShift_Top"
+        "Ambient", "OutdoorAmbient", "Brightness", "FogColor", "FogStart", "FogEnd", "TimeOfDay",
+        "GlobalShadows", "Technology", "GeographicLatitude"
     },
-    
+
     -- Player
     Player = {
-        "Health", "MaxHealth", "Team", "Character", "Backpack", "UserId", "Name", "DisplayName"
+        "UserId", "Name", "DisplayName", "Character", "Backpack", "Team", "CameraMode"
     },
-    
+
     -- Humanoid
     Humanoid = {
-        "Health", "MaxHealth", "WalkSpeed", "JumpHeight", "HipWidth", "Name", "RootPart"
+        "Health", "MaxHealth", "WalkSpeed", "JumpPower", "HipHeight", "AutoRotate", "DisplayDistanceType"
     },
-    
+
     -- GuiButton
     GuiButton = {
-        "Text", "TextColor", "TextSize", "OnClick", "Enabled", "Position", "Size", "Font", "AnchorPoint"
+        "Text", "TextColor3", "TextSize", "Font", "AnchorPoint", "AutoButtonColor", "Modal"
     },
-    
+
     -- Animation
     Animation = {
-        "Priority", "TrackSpeed", "TrackWeight", "IsLooping"
+        "AnimationId", "Priority", "Looped"
     },
-    
+
     -- Network
     Network = {
         "NetworkOwner", "ReplicationFocus"
     },
-    
+
     -- UIStroke
     UIStroke = {
-        "Color", "Thickness", "Transparency"
+        "Color", "Thickness", "Transparency", "ApplyStrokeMode", "LineJoinMode"
     },
-    
+
     -- TweenInfo
     TweenInfo = {
-        "Time", "EasingStyle", "EasingDirection", "RepeatCount", "Reverses"
+        "Time", "EasingStyle", "EasingDirection", "RepeatCount", "Reverses", "DelayTime"
     },
-    
+
     -- BoxHandleAdornment
     BoxHandleAdornment = {
         "Adornee", "AlwaysOnTop", "Color3", "Size", "Transparency", "Visible", "ZIndex"
     },
-    
+
     -- BillboardGui
     BillboardGui = {
         "Size", "Adornee", "StudsOffset", "AlwaysOnTop", "Enabled", "MaxDistance", "ResetOnSpawn"
     },
-    
+
     -- SurfaceGui
     SurfaceGui = {
-        "Size", "Adornee", "Face", "Enabled", "StudsOffset"
+        "CanvasSize", "Adornee", "Face", "Enabled", "LightInfluence", "AlwaysOnTop"
     },
-    
+
     -- CameraSubject
     CameraSubject = {
         "Parent", "CFrame", "Position", "Orientation"
     },
-    
+
     -- HumanoidDescription
     HumanoidDescription = {
-        "BodyColors", "Head", "Torso", "Legs", "Arms", "Clothing", "Hat"
+        "HeadColor", "TorsoColor", "LeftArmColor", "RightArmColor", "LeftLegColor", "RightLegColor",
+        "Face", "Shirt", "Pants", "GraphicTShirt", "HatAccessory"
     },
-    
-    -- BillboardGui
-    BillboardGui = {
-        "Size", "Adornee", "StudsOffset", "AlwaysOnTop", "Enabled", "MaxDistance", "ResetOnSpawn"
-    },
-    
+
     -- Decal
     Decal = {
-        "Texture", "Transparency", "Face", "Color3", "Size", "ZIndex"
+        "Texture", "Transparency", "Face", "Color3", "ZIndex"
     },
-    
+
     -- MeshPart
     MeshPart = {
-        "MeshId", "TextureID", "Scale", "Color", "Material", "Reflectance", "Size", "Transparency"
+        "MeshId", "TextureID", "Scale", "Color", "Material", "Reflectance", "Size", "Transparency",
+        "DoubleSided"
     },
-    
-    -- Decal
-    Decal = {
-        "Texture", "Transparency", "Face", "Color3", "Size", "ZIndex"
-    },
-    
+
     -- RemoteEvent
     RemoteEvent = {
         "Name", "OnClientEvent", "OnServerEvent"
     },
-    
+
     -- RemoteFunction
     RemoteFunction = {
         "Name", "OnServerInvoke"
     },
-    
+
     -- PathfindingService
     PathfindingService = {
         "CreatePath", "IsPathClear", "GetPathStatus"
     },
-    
+
     -- TextBox
     TextBox = {
-        "Text", "TextColor3", "TextSize", "TextTransparency", "TextStrokeTransparency", "TextStrokeColor3",
-        "Font", "TextAlignment", "TextWrapped", "MultiLine"
+        "Text", "TextColor3", "TextSize", "Font", "TextWrapped", "ClearTextOnFocus", "MultiLine"
     },
-    
-    -- Particles (ParticleEmitter)
+
+    -- ParticleEmitter
     ParticleEmitter = {
-        "Size", "Rate", "Texture", "Color", "Transparency", "Lifetime", "Speed", "Rotation", "VelocityInheritance"
+        "Size", "Rate", "Texture", "Color", "Transparency", "Lifetime", "Speed", "Rotation", "VelocityInheritance",
+        "LightEmission", "LightInfluence"
     },
-    
+
     -- ScreenGui
     ScreenGui = {
-        "Enabled", "ResetOnSpawn", "Parent"
+        "Enabled", "ResetOnSpawn", "IgnoreGuiInset", "ZIndexBehavior"
     },
-    
+
     -- Frame
     Frame = {
-        "Size", "Position", "AnchorPoint", "BackgroundColor3", "BackgroundTransparency", "BorderSizePixel", "Visible"
+        "Size", "Position", "AnchorPoint", "BackgroundColor3", "BackgroundTransparency",
+        "BorderSizePixel", "Visible", "ClipsDescendants"
     },
-    
+
     -- TextButton
     TextButton = {
-        "Text", "TextColor3", "TextSize", "Font", "TextAlignment", "OnClick"
+        "Text", "TextColor3", "TextSize", "Font", "AutoButtonColor", "TextWrapped"
     },
-    
+
     -- TextLabel
     TextLabel = {
-        "Text", "TextColor3", "TextSize", "Font", "TextAlignment", "TextWrapped"
+        "Text", "TextColor3", "TextSize", "Font", "TextWrapped"
     }
 }
 
