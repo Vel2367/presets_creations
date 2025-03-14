@@ -2,23 +2,27 @@ local allProperties = loadstring(game:HttpGet("https://raw.githubusercontent.com
 local Lib = {}
 
 function Lib:GetProperties(className)
-    if allProperties[className] then
-        return allProperties[className]
-    end
-    return nil
+    return allProperties[className] or {}
 end
+
 
 function Lib:InstanceObject(option)
     local class, parent, name = option.class or nil, option.parent or nil, option.name or option.class
     local properties = option.properties or {}
+    local validProperties = Lib:GetProperties(class)
 
-    local success, Object = pcall(function()
+    local createSuccess, Object = pcall(function()
         return Instance.new(class)
     end)
-    if not success then return nil end
+    if not createSuccess then return nil end
     Object.Parent = parent
     Object.Name = name
 
+    for _, property in pairs(properties) do
+        if table.find(validProperties, tostring(property)) then
+            print(property,"=", validProperties)
+        end
+    end
 
     return Object
 end
