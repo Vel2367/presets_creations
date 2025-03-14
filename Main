@@ -1,17 +1,24 @@
-local Objects = {}
+local Lib = {}
 
 function Lib:InstanceCore(Name, options)
     local class = options.className
-    if not class or not pcall(Instance.new, class) then
+    if not class then
+        warn("Class name is missing!")
+        return nil
+    end
+
+    local success, Object = pcall(function()
+        return Instance.new(class)
+    end)
+
+    if not success then
         warn("Invalid class name: " .. tostring(class))
         return nil
     end
 
-    local Object = Instance.new(class)
     Object.Name = Name or class
     Object.Parent = options.parent or game.Workspace
-
     return Object
 end
 
-return Objects
+return Lib
