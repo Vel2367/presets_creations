@@ -1,0 +1,27 @@
+local InstanceMethods = {
+    "Clone",
+    "Destroy",
+    "FindFirstAncestor",
+    "FindFirstAncestorOfClass",
+    "FindFirstAncestorWhichIsA",
+    "FindFirstChild",
+    "FindFirstChildOfClass",
+    "FindFirstChildWhichIsA",
+    "GetActor",
+    "GetAttribute",
+    "GetAttributes",
+    "GetChildren",
+    "GetDebugId",
+    "GetDescendants",
+    "GetFullName",
+    "GetPropertyChangedSignal",
+    "HasTag",
+    "IsA",
+    "IsAncestorOf",
+    "IsDescendantOf",
+    "Remove",
+    "SetAttribute",
+    "WaitForChild",
+}
+
+return InstanceMethods
