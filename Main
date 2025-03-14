@@ -38,9 +38,18 @@ function Lib:InstanceCore(Name, options)
     Object.Name = Name or class
     Object.Parent = options.parent or game.Workspace
 
-    local ObjectMethods = Lib:GetMethods(class)
     local ObjectProperties = Lib:GetProperties(class)
-    
+    if ObjectProperties then
+        for property, value in pairs(options.properties or {}) do
+            if table.find(ObjectProperties, property) then
+                pcall(function()
+                    Object[property] = value
+                end)
+            else
+                warn("Property " .. property .. " not found for class " .. class)
+            end
+        end
+    end
     return Object
 end
 
