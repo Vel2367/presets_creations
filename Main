@@ -15,15 +15,20 @@ function Lib:InstanceObject(option)
         return Instance.new(class)
     end)
     if not createSuccess then return nil end
+
     Object.Parent = parent
     Object.Name = name
 
-    for _, property in pairs(properties) do
+    for property, value in pairs(properties) do
         if table.find(validProperties, tostring(property)) then
-            print(property,"=", validProperties)
+            local success, errorMsg = pcall(function()
+                Object[property] = value
+            end)
+            if not success then
+                warn("Ошибка при установке свойства:", property, "-", errorMsg)
+            end
         end
     end
-
     return Object
 end
  
