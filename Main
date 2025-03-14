@@ -8,7 +8,6 @@ local function checkIfGameLoaded()
 end
 checkIfGameLoaded()
 
-
 function Lib:GetMethods(className)
     if Methods[className] then
         return Methods[className]
@@ -20,7 +19,7 @@ end
 
 function Lib:GetProperties(className)
     if Properties[className] then
-        return Methods[className]
+        return Properties[className]
     else
         warn("Properties for class " .. className .. " not found.")
         return nil
