@@ -1,4 +1,4 @@
-local Lib = {}
+local Objects = {}
 
 local function checkIfGameLoaded()
     game.Loaded:Wait()
@@ -20,4 +20,4 @@ function Lib:InstanceCore(Name, options)
     return Object
 end
 
-return Lib
+return Objects
