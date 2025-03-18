@@ -1,1 +1,24 @@
+local Lib = {}
 
+function Lib:Get()
+    local workspace = game:GetService("Workspace")
+    local replicatedStorage = game:GetService("ReplicatedStorage")
+    local players = game:GetService("Players")
+    
+    local localPlayer = players.LocalPlayer
+    local localCharacter = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+    local localHumanoid = localCharacter:WaitForChild("HumanoidRootPart", 10)
+
+    if not localHumanoid then
+        warn("HumanoidRootPart не найден у персонажа " .. localPlayer.Name)
+        return
+    end
+
+    local tweenService = game:GetService("TweenService")
+    local runService = game:GetService("RunService")
+    local userInputService = game:GetService("UserInputService")
+
+    return workspace, replicatedStorage, players, localPlayer, localCharacter, localHumanoid, tweenService, runService, userInputService
+end
+
+return Lib
